@@ -1,0 +1,26 @@
+.row {
+  background-color: #EFEFEF;
+  margin-top: -6%;
+  padding-bottom: 10%;
+}
+
+.col-sm-7 {
+  padding-bottom: 7%;
+}
+
+#inscription {
+  font-size: 250%;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 20%;
+  padding-bottom: 2%;
+}
+
+.why_inscription {
+  margin-top: 30%;
+  background-color: #C0C0C0;
+}
+
+.form_log {
+  display: inline-block;
+}

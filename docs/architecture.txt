@@ -1,0 +1,48 @@
+Afin d'obtenir un code organisé et modulaire, nous adoptons une structure de dossier modèle-vue-controleur (MVC) (cf. les structures MVC utilisés dans les frameworks Laravel, Symphony, Zend, CakePHP...etc)
+Cependant, nous n'utiliserons pas l'aspect orienté objet de php (contrainte de l'énoncé)
+De plus, nous effectuons une séparation privée/publique :
+- l'application web se situe dans betwin/app
+- l'interface publique qui permet d'accéder à l'application web se situe dans betwin/public
+Ainsi, on accède à la page d'accueil via betwin/public/index.php
+
+******************************************************************************************************************************************************
+::Description générale :
+******************************************************************************************************************************************************
+Interface publique de l'application web :
+
+- betwin/public/index.php est la page d'acceuil : présentation, "hero image" pour inspirer des parieurs potentiels...etc
+- betwin/public/profile.php est la page qui gère l'affichage des données de l'utilisateur + modifications possible avec boutons dynamiques + affichage  de l'historiques des paris (onglet profil que si on est connecté)...etc
+- betwin/public/event.php page des paris sportifs, gère affichage des paris sportifs avec photos, parier sur les paris depuis cette page avec les boutons dynamiques
+- betwin/public/help.php page d'aide, informations sur la dépendance au jeu possible., lien utiles...etc
+- betwin/public/about.php page page "à propos" informations nous concernant et concernant BetWin, contacts possibles...etc
+- betwin/public/register.php page d'inscription, permet l'inscription à BetWin : création d'un comptes...etc
+- betwin/public/login.php page de connexion
+- betwin/public/logout.php page de déconnexion qui déconnecte et redirige vers l'accueil
+
+cf. chacune des ces pages fait appel à son module associé, structure MVC
+
+cf. suite à des modifications d'informations personelles, recharge d'argent, pari sur un évènement...etc, le feedback visuel est effectué directement de manière dynamique via une interface intéraction client-serveur par AJAX: utilisation d'un format simple standard json pour les réponses du serveur...etc
+
+******************************************************************************************************************************************************
+::Quelques précisions :
+******************************************************************************************************************************************************
+
+Chaque page est considéré comme un module et les différents types de tâche du module sont séparés (logique de la page, accés à la base de données, affichage...etc) pour une meilleure organisation.
+Ainsi, les pages dans betwin/public/ font appel à l'application web betwin/app organisée en MVC avec :
+- betwin/app/controller/nom_module : le "chef d'orchestre" du module "nom_module" qui gère l'intéraction entre : input de l'utilisateur, gestion et réponse de la base de données, logique de la page, et l'output à l'utilisateur c'est-à-dire l'affichage.
+- betwin/app/model/nom_module_fonction : les accès à notre base de données et à notre modèle (cf. calcul des côtes...etc)
+- betwin/app/view/nom_module : l'affichage de la page concernant le module "nom_module"
+
+La configuration de l'application peut se faire dans betwin/app/config :
+- betwin/app/config/constant.php : les constantes utilisées cf. chemin des fichiers par rapport à la racine du serveur web pour une plus grande flexibilité dans l'application (modification de la structure...etc)
+- betwin/app/config/db_param.php : les paramètres d'accès à la base de données
+Normalement tout est configuré pour que l'application web fonctionne out of the box (groupe g7)
+
+D'autres ressources utilisées aussi dans betwin/public :
+- betwin/public/assets : les fichiers multimedias utilisés propres à des fonctionalités du site
+- betwin/public/images : les images utilisés dans l'apparence du site
+- betwin/public/css/nom_module.css : le fichier style css du module correspondant
+- betwin/public/css/nom_module.js : le fichier javascript du module correspondant
+il s'occupe notamment, pour son module, de la gestion des boutons dynamiques, validation des formulaires au niveau client, messages dynamiques et gestion de l'intéraction interface client-serveur via AJAX : utilisation d'un format simple standard json pour les réponses...etc
+
+Bien entendu pour un vrai déploiement et une meilleure sécurité (lors de l'envoi de mot de passe...etc), il serait bon d'établir des connections en https pour bénéficier de SSL et donc se procurer des certificats...etc pour réduire le risque de MITM man-in-the-middle-attacks.

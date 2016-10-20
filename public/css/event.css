@@ -1,0 +1,54 @@
+.event_row{
+  margin-top: -1%;
+}
+
+.event_content {
+  background-color: #EFEFEF;
+  border-radius: 10px;
+}
+
+.event_header {
+    background-color: #C0C0C0;
+    border-radius: 10px;
+}
+
+.spacer {
+  margin-top: 30px;
+}
+
+.match_name {
+  padding-bottom: 2%;
+  text-decoration:underline;
+}
+
+.team_info {
+  font-size: 150%;
+  text-align: center;
+}
+
+.col-sm-1 {
+  padding-left: 5%;
+  margin-left: 20%;
+  padding-top: 5%;
+  padding-bottom: 1%;
+}
+
+.team_img {
+  margin: auto;
+   width: 100%;
+   max-width: 200px;
+   max-height: 200px;
+}
+.vs_img {
+  margin-top:30%;
+
+}
+
+.bet_form_show {
+  margin-left: 33%;
+}
+
+.form_log {
+  display: inline-block;
+  margin-top: 20px;
+}

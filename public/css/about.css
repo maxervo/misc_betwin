@@ -1,0 +1,24 @@
+.bg-1{
+  background-color: #EEEFEF;
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-bottom: 5%;
+  font-size: 120%;
+  margin-top: -1%;
+}
+
+.bg-2{
+  background-color: #C0C0C0;
+  padding-left: 10%;
+  padding-bottom: 5%;
+  padding-top: 5%;
+  font-size: 120%;
+}
+
+.bg-3{
+  background-color: #FEFEFE;
+  padding-left: 10%;
+  padding-bottom: 5%;
+  padding-top: 5%;
+  font-size: 120%;
+}

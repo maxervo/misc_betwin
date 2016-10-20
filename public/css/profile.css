@@ -1,0 +1,23 @@
+#money_form_show {
+  margin-top: 2em;
+  margin-left: 5em;
+}
+
+#info_form_show {
+  margin-left: 2em;
+}
+
+.clearfix:after {     //to prevent collapsing parents
+   content: " ";
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+#info_password_form_show {
+  margin-left: 2em;
+}
+
+.form_log {
+  display: inline-block;
+}

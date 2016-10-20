@@ -1,0 +1,28 @@
+/* adapting the page to position footer : fixed at bottom */
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 100px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Fixed height of the footer */
+  height: auto;
+  background-color: #f5f5f5;
+
+}
+
+.bg-4 {
+    background-color: #2f2f2f;
+    color: #ffffff;
+    font-size: 12px;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+}
